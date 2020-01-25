@@ -70,6 +70,7 @@ qbits = np.array([[0],  # 000
                   [0],  # 110
                   [0]])  # 111
 
+# FOR TESTING MATRICES
 # for i in range(8):
 #     qbits = np.array([[0],   #000
 #                       [0],   #001
@@ -90,7 +91,7 @@ qbits = np.array([[0],  # 000
 #     print(qbits, bin(i))
 
 
-# deutsch jozsa algorithm assuming constant function
+# deutsch jozsa algorithm
 function = random.randint(0, 3)
 qbits[function][0] = 1
 
