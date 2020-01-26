@@ -61,7 +61,7 @@ cnot_2_3 = np.array([[1, 0, 0, 0, 0, 0, 0, 0],
                      [0, 0, 0, 1, 0, 0, 0, 0]])
 
 # Initialization state
-qbits = np.array([[0],  # 000
+qbits = np.array([[1],  # 000
                   [0],  # 001
                   [0],  # 010
                   [0],  # 011
@@ -92,8 +92,10 @@ qbits = np.array([[0],  # 000
 
 
 # deutsch jozsa algorithm
-function = random.randint(0, 3)
-qbits[function][0] = 1
+
+# Nice stuff we don't need.
+# function = random.randint(0, 3)
+# qbits[function][0] = 1
 
 qbits = np.matmul(pauli_x_3, qbits)
 qbits = np.matmul(hadamard_3, qbits)
@@ -103,11 +105,14 @@ qbits = np.matmul(hadamard_3, qbits)
 qbits = np.matmul(pauli_x_3, qbits)
 qbits = qbits/8
 
-value = [index for index in range(8) if qbits[index][0] == 1][0]
-formatted_function = str(bin(function)).strip("0b")
-if value in [0, 1, 2, 3]:
-    print(f'Function {formatted_function.zfill(2)} is Constant')
-elif value in [4, 5, 6, 7]:
-    print(f'Function {formatted_function.zfill(2)} is Balanced')
-else:
-    print(f'Error, Input most likely doesn\'t exist.')
+print(qbits)
+
+# Nice stuff we don't need
+# value = [index for index in range(8) if qbits[index][0] == 1][0]
+# formatted_function = str(bin(function)).strip("0b")
+# if value in [0, 1, 2, 3]:
+#     print(f'Function {formatted_function.zfill(2)} is Constant')
+# elif value in [4, 5, 6, 7]:
+#     print(f'Function {formatted_function.zfill(2)} is Balanced')
+# else:
+#     print(f'Error, Input most likely doesn\'t exist.')
